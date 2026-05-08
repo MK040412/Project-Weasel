@@ -12,7 +12,7 @@ export const subProjects: SubProject[] = [
 	{
 		title: 'W0: An Open VLA for Long-Horizon Tasks',
 		tagline:
-			'Flagship of the W series — confronting the core problems VLAs face today and building toward agents with real autonomy.',
+			'Main project — first entry in the W series, confronting the core problems VLAs face today and building toward agents with real autonomy.',
 		link: 'https://mk040412.github.io/W0/',
 		repo: 'https://github.com/MK040412/W0',
 		image: '/weasel-logo.png',
