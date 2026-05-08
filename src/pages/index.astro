@@ -1,0 +1,94 @@
+---
+import { Image } from 'astro:assets'
+import Layout from '../layouts/Layout.astro'
+import { subProjects, type SubProject } from '../data/projects'
+import WeaselLogo from '../assets/weasel-logo.png'
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<Layout>
+	<table class='outer'>
+		<tbody>
+			<tr>
+				<td>
+					<table class='header-table'>
+						<tbody>
+							<tr>
+								<td class='header-text-cell'>
+									<p class='name'>Project Weasel</p>
+									<p class='bio'>
+										<strong>Project Weasel</strong> is a research initiative aimed at making
+										<a href='#projects'>Vision-Language-Action (VLA)</a> models genuinely useful in the
+										real world — focused on agents that take action. The flagship <strong>W series</strong>
+										identifies and tackles the core problems VLAs face today, working toward agents with
+										real autonomy. <strong>Sub-projects</strong> explore important VLA-adjacent topics.
+									</p>
+									<p class='contact-line'>
+										<a href='https://github.com/MK040412'>Github</a>
+										<span class='sep'>{' / '}</span>
+										<a href='https://mk040412.github.io/'>Maintainer: Kang Minkyu</a>
+									</p>
+								</td>
+								<td class='header-photo-cell'>
+									<Image src={WeaselLogo} alt='Weasel logo' class='profile-photo' />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class='section-table' id='projects'>
+						<tbody>
+							<tr>
+								<td class='section-cell'>
+									<h2>Sub-projects</h2>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class='entries-table'>
+						<tbody>
+							{subProjects.map((p: SubProject) => {
+								const bg = p.highlight ? '#ffffd0' : undefined
+								return (
+									<tr style={bg ? `background-color:${bg};` : undefined}>
+										<td class='thumb-cell'>
+											<img src={`${base}${p.image}`} alt={p.title} class='thumb' />
+										</td>
+										<td class='entry-cell'>
+											<a href={p.link} target='_blank' rel='noopener'>
+												<span class='papertitle'>{p.title}</span>
+											</a>
+											{p.tags && p.tags.length > 0 && (
+												<>
+													<br />
+													<span class='post-tags'>
+														{p.tags.map((t, i) => (
+															<>
+																{i === 0 ? '' : ' · '}
+																<span class='tag'>{t}</span>
+															</>
+														))}
+													</span>
+												</>
+											)}
+											<p class='excerpt'>{p.tagline}</p>
+											<a href={p.repo} target='_blank' rel='noopener' class='post-meta'>
+												{p.repo.replace('https://', '')}
+											</a>
+										</td>
+									</tr>
+								)
+							})}
+						</tbody>
+					</table>
+
+					<p class='footer-credit'>
+						Maintained by <a href='https://mk040412.github.io/'>Kang Minkyu</a>.
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</Layout>

@@ -1,0 +1,178 @@
+---
+type Props = {
+	title?: string
+	description?: string
+}
+
+const {
+	title = 'Project Weasel',
+	description = 'Research initiative on making Vision-Language-Action (VLA) models genuinely useful in the real world.',
+} = Astro.props
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<!doctype html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8' />
+		<meta name='viewport' content='width=device-width,initial-scale=1' />
+		<link rel='icon' type='image/png' href={`${base}/weasel-logo.png`} />
+		<link rel='apple-touch-icon' href={`${base}/weasel-logo.png`} />
+		<link rel='preconnect' href='https://fonts.googleapis.com' />
+		<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap' />
+		<title>{title}</title>
+		<meta name='title' content={title} />
+		<meta name='description' content={description} />
+		<meta property='og:title' content={title} />
+		<meta property='og:description' content={description} />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	html, body {
+		margin: 0;
+		padding: 0;
+		background: #ffffff;
+		color: #000000;
+	}
+
+	body, td, th, tr, p, a {
+		font-family: 'Lato', Verdana, Helvetica, sans-serif;
+		font-size: 14px;
+		line-height: 1.45;
+	}
+
+	a {
+		color: #1772d0;
+		text-decoration: none;
+	}
+
+	a:focus, a:hover {
+		color: #f09228;
+	}
+
+	h2 {
+		margin: 0 0 8px 0;
+		font-weight: normal;
+		font-size: 22px;
+	}
+
+	.papertitle {
+		font-size: 14px;
+		font-weight: 700;
+	}
+
+	.name {
+		padding-top: 0;
+		margin: 0 0 10px 0;
+		font-size: 32px;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	span.highlight {
+		background-color: #ffffd0;
+	}
+
+	.outer {
+		width: 100%;
+		max-width: 800px;
+		margin: 0 auto;
+		border: 0;
+		border-spacing: 0;
+		border-collapse: separate;
+		padding: 0 16px;
+	}
+
+	.outer td { padding: 0; }
+
+	.header-table {
+		width: 100%;
+		border-spacing: 0;
+		margin-top: 24px;
+	}
+
+	.header-text-cell {
+		padding: 20px;
+		width: 75%;
+		vertical-align: middle;
+	}
+
+	.header-photo-cell {
+		padding: 20px 20px 20px 0;
+		width: 25%;
+		vertical-align: middle;
+		text-align: right;
+	}
+
+	.profile-photo {
+		width: 100%;
+		max-width: 180px;
+		height: auto;
+		border-radius: 4px;
+		display: inline-block;
+	}
+
+	.bio { margin: 0 0 14px 0; text-align: left; }
+
+	.contact-line { text-align: center; margin: 0; }
+	.contact-line .sep { color: #999; margin: 0 4px; }
+
+	.section-table {
+		width: 100%;
+		margin-top: 28px;
+	}
+	.section-cell { padding: 8px; }
+
+	.entries-table {
+		width: 100%;
+		border-spacing: 0 12px;
+		border-collapse: separate;
+	}
+
+	.thumb-cell { padding: 12px 8px; width: 180px; vertical-align: middle; }
+	.entry-cell { padding: 12px 8px 12px 4px; vertical-align: middle; }
+
+	.thumb {
+		width: 160px;
+		height: 160px;
+		object-fit: cover;
+		display: block;
+		border-radius: 4px;
+	}
+
+	.post-meta { color: #555; font-size: 13px; }
+	.post-tags { color: #777; font-size: 13px; }
+	.post-tags .tag { color: #777; }
+	.excerpt { margin: 8px 0 6px 0; color: #000; }
+
+	.footer-credit {
+		text-align: right;
+		font-size: 12px;
+		color: #777;
+		padding: 32px 8px 24px 8px;
+	}
+
+	@media (max-width: 700px) {
+		.header-table tbody tr {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+		.header-text-cell, .header-photo-cell {
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			padding: 8px;
+			text-align: center;
+		}
+		.profile-photo { max-width: 200px; }
+		.name { font-size: 28px; padding-top: 8px; }
+		.thumb-cell { width: 120px; }
+		.thumb { width: 110px; height: 110px; }
+	}
+</style>
