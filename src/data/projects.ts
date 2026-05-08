@@ -20,12 +20,12 @@ export const subProjects: SubProject[] = [
 		highlight: true,
 	},
 	{
-		title: 'MineMate: Emergent Behaviour in Multi-Agent Systems with Human',
+		title: 'MineMate: Multi-Agent Emergence with Humans',
 		tagline:
-			'Studying how cooperative behaviour emerges when human partners are part of a multi-agent system.',
+			'Studying how cooperative behaviour emerges when humans are part of a multi-agent system.',
 		link: 'https://mk040412.github.io/MineMate/',
 		repo: 'https://github.com/MK040412/MineMate',
-		image: '/minemate.jpg',
+		image: '/minemate.png',
 		tags: ['Multi-Agent', 'Human-in-the-loop'],
 	},
 ];
