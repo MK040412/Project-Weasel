@@ -23,6 +23,16 @@ export const mainProjects: SubProject[] = [
 
 export const subProjects: SubProject[] = [
 	{
+		title: 'Mean Collapse is a Serious Bottleneck of VLA',
+		tagline:
+			'A toy study showing that VLAs trained on the latest observation only collapse on POMDP tasks — and a small memory-based steering module on the frozen VLA recovers performance past the MDP baseline.',
+		link: 'https://mk040412.github.io/Mean-Collapse-VLA/',
+		repo: 'https://github.com/MK040412/Mean-Collapse-VLA',
+		image: '/weasel-logo.png',
+		tags: ['VLA', 'POMDP', 'Memory', 'Steering'],
+		highlight: true,
+	},
+	{
 		title: 'MineMate: Multi-Agent Emergence with Humans',
 		tagline:
 			'Studying how cooperative behaviour emerges when humans are part of a multi-agent system.',
