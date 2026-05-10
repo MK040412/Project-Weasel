@@ -25,7 +25,7 @@ export const subProjects: SubProject[] = [
 	{
 		title: 'Mean Collapse is a Serious Bottleneck of VLA',
 		tagline:
-			'A toy study showing that VLAs trained on the latest observation only collapse on POMDP tasks — and a small memory-based steering module on the frozen VLA recovers performance past the MDP baseline.',
+			'We test the mean-collapse case on Ant-Maze. For a VLM-based VLA acting on the latest observation only, mean collapse turns out to be a major problem on POMDP inputs — and a small memory-based steering module on the frozen VLA solves it, raising the success rate above the MDP baseline.',
 		link: 'https://mk040412.github.io/Mean-Collapse-VLA/',
 		repo: 'https://github.com/MK040412/Mean-Collapse-VLA',
 		image: '/ant.png',
