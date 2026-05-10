@@ -55,7 +55,7 @@ function renderEntries(list: SubProject[]) {
 					<table class='entries-table'>
 						<tbody>
 							{mainProjects.map((p: SubProject) => (
-								<tr>
+								<tr style={p.highlight ? 'background-color:#ffffd0;' : undefined}>
 									<td class='thumb-cell'>
 										<img src={`${base}${p.image}`} alt={p.title} class='thumb' />
 									</td>

@@ -17,6 +17,7 @@ export const mainProjects: SubProject[] = [
 		repo: 'https://github.com/MK040412/W0',
 		image: '/weasel-logo.png',
 		tags: ['VLA', 'Long-Horizon', 'Autonomy'],
+		highlight: true,
 	},
 ];
 
