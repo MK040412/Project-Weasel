@@ -8,17 +8,19 @@ export type SubProject = {
 	highlight?: boolean;
 };
 
-export const subProjects: SubProject[] = [
+export const mainProjects: SubProject[] = [
 	{
 		title: 'W0: An Open VLA for Long-Horizon Tasks',
 		tagline:
-			'Main project — first entry in the W series, confronting the core problems VLAs face today and building toward agents with real autonomy.',
+			'First entry in the W series, confronting the core problems VLAs face today and building toward agents with real autonomy.',
 		link: 'https://mk040412.github.io/W0/',
 		repo: 'https://github.com/MK040412/W0',
 		image: '/weasel-logo.png',
 		tags: ['VLA', 'Long-Horizon', 'Autonomy'],
-		highlight: true,
 	},
+];
+
+export const subProjects: SubProject[] = [
 	{
 		title: 'MineMate: Multi-Agent Emergence with Humans',
 		tagline:

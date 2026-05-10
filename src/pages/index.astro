@@ -1,10 +1,14 @@
 ---
 import { Image } from 'astro:assets'
 import Layout from '../layouts/Layout.astro'
-import { subProjects, type SubProject } from '../data/projects'
+import { mainProjects, subProjects, type SubProject } from '../data/projects'
 import WeaselLogo from '../assets/weasel-logo.png'
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+
+function renderEntries(list: SubProject[]) {
+	return list
+}
 ---
 
 <Layout>
@@ -42,6 +46,50 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 						<tbody>
 							<tr>
 								<td class='section-cell'>
+									<h2>Main project</h2>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class='entries-table'>
+						<tbody>
+							{mainProjects.map((p: SubProject) => (
+								<tr>
+									<td class='thumb-cell'>
+										<img src={`${base}${p.image}`} alt={p.title} class='thumb' />
+									</td>
+									<td class='entry-cell'>
+										<a href={p.link} target='_blank' rel='noopener'>
+											<span class='papertitle'>{p.title}</span>
+										</a>
+										{p.tags && p.tags.length > 0 && (
+											<>
+												<br />
+												<span class='post-tags'>
+													{p.tags.map((t, i) => (
+														<>
+															{i === 0 ? '' : ' · '}
+															<span class='tag'>{t}</span>
+														</>
+													))}
+												</span>
+											</>
+										)}
+										<p class='excerpt'>{p.tagline}</p>
+										<a href={p.repo} target='_blank' rel='noopener' class='post-meta'>
+											{p.repo.replace('https://', '')}
+										</a>
+									</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+
+					<table class='section-table'>
+						<tbody>
+							<tr>
+								<td class='section-cell'>
 									<h2>Sub-projects</h2>
 								</td>
 							</tr>
@@ -50,38 +98,35 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 
 					<table class='entries-table'>
 						<tbody>
-							{subProjects.map((p: SubProject) => {
-								const bg = p.highlight ? '#ffffd0' : undefined
-								return (
-									<tr style={bg ? `background-color:${bg};` : undefined}>
-										<td class='thumb-cell'>
-											<img src={`${base}${p.image}`} alt={p.title} class='thumb' />
-										</td>
-										<td class='entry-cell'>
-											<a href={p.link} target='_blank' rel='noopener'>
-												<span class='papertitle'>{p.title}</span>
-											</a>
-											{p.tags && p.tags.length > 0 && (
-												<>
-													<br />
-													<span class='post-tags'>
-														{p.tags.map((t, i) => (
-															<>
-																{i === 0 ? '' : ' · '}
-																<span class='tag'>{t}</span>
-															</>
-														))}
-													</span>
-												</>
-											)}
-											<p class='excerpt'>{p.tagline}</p>
-											<a href={p.repo} target='_blank' rel='noopener' class='post-meta'>
-												{p.repo.replace('https://', '')}
-											</a>
-										</td>
-									</tr>
-								)
-							})}
+							{subProjects.map((p: SubProject) => (
+								<tr>
+									<td class='thumb-cell'>
+										<img src={`${base}${p.image}`} alt={p.title} class='thumb' />
+									</td>
+									<td class='entry-cell'>
+										<a href={p.link} target='_blank' rel='noopener'>
+											<span class='papertitle'>{p.title}</span>
+										</a>
+										{p.tags && p.tags.length > 0 && (
+											<>
+												<br />
+												<span class='post-tags'>
+													{p.tags.map((t, i) => (
+														<>
+															{i === 0 ? '' : ' · '}
+															<span class='tag'>{t}</span>
+														</>
+													))}
+												</span>
+											</>
+										)}
+										<p class='excerpt'>{p.tagline}</p>
+										<a href={p.repo} target='_blank' rel='noopener' class='post-meta'>
+											{p.repo.replace('https://', '')}
+										</a>
+									</td>
+								</tr>
+							))}
 						</tbody>
 					</table>
 
