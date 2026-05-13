@@ -32,7 +32,7 @@ export const subProjects: SubProject[] = [
 		tags: ['VLA', 'POMDP', 'Memory', 'Steering'],
 	},
 	{
-		title: 'MineMate: Multi-Agent Emergence with Humans',
+		title: 'MineMate: Multi-Agent Emergent Capability with Humans',
 		tagline:
 			'Studying how cooperative behaviour emerges when humans are part of a multi-agent system.',
 		link: 'https://mk040412.github.io/MineMate/',
