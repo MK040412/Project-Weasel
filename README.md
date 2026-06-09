@@ -6,5 +6,5 @@ Live: https://mk040412.github.io/Project-Weasel/
 
 ## Sub-projects
 
-- W0: A VLM-Based GUI Agent with Block-Diffusion Mode Steering — https://github.com/MK040412/W0
+- W0: A dVLM-Based GUI Agent with Block-Diffusion Mode Steering — https://github.com/MK040412/W0
 - MineMate: Multi-Agent Emergence with Humans — https://github.com/MK040412/MineMate

@@ -10,9 +10,9 @@ export type SubProject = {
 
 export const mainProjects: SubProject[] = [
 	{
-		title: 'W0: A VLM-Based GUI Agent with Block-Diffusion Mode Steering',
+		title: 'W0: A dVLM-Based GUI Agent with Block-Diffusion Mode Steering',
 		tagline:
-			'Flagship of the W series: a VLM-based GUI agent that keeps a frozen screen-language backbone and a block-discrete diffusion action head, training only a mode selector with critic-free RLVR (MSPO) for fast, long-horizon GUI control.',
+			'Flagship of the W series: a dVLM-based GUI agent that keeps a frozen screen-language backbone and a block-discrete diffusion action head, training only a mode selector with critic-free RLVR (MSPO) for fast, long-horizon GUI control.',
 		link: 'https://mk040412.github.io/W0/',
 		repo: 'https://github.com/MK040412/W0',
 		image: '/weasel-logo.png',
