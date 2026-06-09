@@ -10,13 +10,13 @@ export type SubProject = {
 
 export const mainProjects: SubProject[] = [
 	{
-		title: 'W0: An Open VLA for Long-Horizon Tasks',
+		title: 'W0: A VLM-Based GUI Agent with Block-Diffusion Mode Steering',
 		tagline:
-			'First entry in the W series, confronting the core problems VLAs face today and building toward agents with real autonomy.',
+			'Flagship of the W series: a VLM-based GUI agent that keeps a frozen screen-language backbone and a block-discrete diffusion action head, training only a mode selector with critic-free RLVR (MSPO) for fast, long-horizon GUI control.',
 		link: 'https://mk040412.github.io/W0/',
 		repo: 'https://github.com/MK040412/W0',
 		image: '/weasel-logo.png',
-		tags: ['VLA', 'Long-Horizon', 'Autonomy'],
+		tags: ['GUI Agent', 'Block Diffusion', 'RLVR'],
 		highlight: true,
 	},
 ];
